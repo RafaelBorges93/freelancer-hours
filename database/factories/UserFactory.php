@@ -28,6 +28,19 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'rating' => fake()->randomElement([1, 2, 3, 4, 5]),
             'avatar' => 'https://avatar.iran.liara.run/public',
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
+    }
+
+    /**
+     * Indicate that the model's email address should be unverified.
+     */
+
+    public function unverified(): static
+    {
+        return $this->state(fn(array $attributes) => [
+            'email_verified_at' => null,
+        ]);
     }
 }
