@@ -31,8 +31,8 @@ class PerdeuMane extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line('Você perdeu posição no projeto: '.$this->project->title)
-            ->action('Abra o projecto', route('projects.show', $this->project))
+            ->line('Você perdeu posição no projeto: ' . $this->project->title)
+            ->action('Abra o projeto', route('projects.show', $this->project))
             ->line('Obrigado!!');
     }
     /**
